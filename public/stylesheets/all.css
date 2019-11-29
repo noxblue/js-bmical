@@ -1,0 +1,374 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+.wrap {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: #f5f5f5; }
+
+header {
+  background-color: #424242;
+  padding: 74px 0;
+  width: 100%; }
+  header .colZone {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 95%;
+    margin: 0 auto; }
+    header .colZone .logo {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
+      width: 100%; }
+      header .colZone .logo img {
+        height: auto;
+        max-height: 117px; }
+    header .colZone .calData {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-pack: center;
+          justify-content: center;
+      width: 100%;
+      padding: 10px 0; }
+      header .colZone .calData label {
+        color: #ffd366;
+        font-size: 18px; }
+      header .colZone .calData input {
+        border: 2px solid #ffd366;
+        border-radius: 10px;
+        margin-top: 7px;
+        font-size: 24px;
+        color: #fff;
+        padding: 4px 0 4px 16px;
+        background-color: rgba(255, 255, 255, 0.18); }
+        header .colZone .calData input:-ms-input-placeholder {
+          font-size: 24px;
+          color: rgba(255, 255, 255, 0.5); }
+        header .colZone .calData input::placeholder {
+          font-size: 24px;
+          color: rgba(255, 255, 255, 0.5); }
+    header .colZone .calStart {
+      width: 100%;
+      padding: 10px 0;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center; }
+      header .colZone .calStart .calContent {
+        width: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+            justify-content: center;
+        -ms-flex-align: center;
+            align-items: center; }
+        header .colZone .calStart .calContent .calBtn {
+          position: relative;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: center;
+              justify-content: center;
+          -ms-flex-align: center;
+              align-items: center;
+          width: 120px;
+          height: 120px;
+          background-color: #ffd366;
+          border-radius: 50%;
+          border: 6px solid transparent;
+          cursor: pointer; }
+          header .colZone .calStart .calContent .calBtn:hover {
+            box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64); }
+          header .colZone .calStart .calContent .calBtn:active {
+            background: #DEA821; }
+          header .colZone .calStart .calContent .calBtn .btnText {
+            font-size: 24px;
+            color: #424242; }
+          header .colZone .calStart .calContent .calBtn .bmiLabel {
+            position: absolute;
+            top: 80px;
+            left: 45px;
+            color: #000;
+            display: none; }
+          header .colZone .calStart .calContent .calBtn .recalIcon {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-pack: center;
+                justify-content: center;
+            -ms-flex-align: center;
+                align-items: center;
+            position: absolute;
+            right: -3px;
+            bottom: 0;
+            background-color: #000;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #424242;
+            display: none; }
+            header .colZone .calStart .calContent .calBtn .recalIcon img {
+              height: auto;
+              max-height: 19px;
+              width: auto;
+              max-width: 14px; }
+        header .colZone .calStart .calContent .levelLabel {
+          font-size: 32px;
+          color: #000;
+          padding-left: 18px;
+          display: none; }
+        header .colZone .calStart .calContent.result .calBtn {
+          background-color: transparent;
+          border-color: #000; }
+          header .colZone .calStart .calContent.result .calBtn .btnText {
+            font-weight: bold;
+            font-size: 32px; }
+          header .colZone .calStart .calContent.result .calBtn .bmiLabel {
+            display: block; }
+          header .colZone .calStart .calContent.result .calBtn .recalIcon {
+            display: -ms-flexbox;
+            display: flex; }
+          header .colZone .calStart .calContent.result .calBtn:hover {
+            box-shadow: none; }
+          header .colZone .calStart .calContent.result .calBtn:active {
+            background-color: transparent; }
+        header .colZone .calStart .calContent.result .levelLabel {
+          display: block; }
+        header .colZone .calStart .calContent.result.light .calBtn {
+          border-color: #31BAF9; }
+          header .colZone .calStart .calContent.result.light .calBtn .btnText, header .colZone .calStart .calContent.result.light .calBtn .bmiLabel {
+            color: #31BAF9; }
+          header .colZone .calStart .calContent.result.light .calBtn .recalIcon {
+            background-color: #31BAF9; }
+        header .colZone .calStart .calContent.result.light .levelLabel {
+          color: #31BAF9; }
+        header .colZone .calStart .calContent.result.normal .calBtn {
+          border-color: #86D73F; }
+          header .colZone .calStart .calContent.result.normal .calBtn .btnText, header .colZone .calStart .calContent.result.normal .calBtn .bmiLabel {
+            color: #86D73F; }
+          header .colZone .calStart .calContent.result.normal .calBtn .recalIcon {
+            background-color: #86D73F; }
+        header .colZone .calStart .calContent.result.normal .levelLabel {
+          color: #86D73F; }
+        header .colZone .calStart .calContent.result.heavyLV0 .calBtn {
+          border-color: #FF982D; }
+          header .colZone .calStart .calContent.result.heavyLV0 .calBtn .btnText, header .colZone .calStart .calContent.result.heavyLV0 .calBtn .bmiLabel {
+            color: #FF982D; }
+          header .colZone .calStart .calContent.result.heavyLV0 .calBtn .recalIcon {
+            background-color: #FF982D; }
+        header .colZone .calStart .calContent.result.heavyLV0 .levelLabel {
+          color: #FF982D; }
+        header .colZone .calStart .calContent.result.heavyLV1 .calBtn {
+          border-color: #FF6C03; }
+          header .colZone .calStart .calContent.result.heavyLV1 .calBtn .btnText, header .colZone .calStart .calContent.result.heavyLV1 .calBtn .bmiLabel {
+            color: #FF6C03; }
+          header .colZone .calStart .calContent.result.heavyLV1 .calBtn .recalIcon {
+            background-color: #FF6C03; }
+        header .colZone .calStart .calContent.result.heavyLV1 .levelLabel {
+          color: #FF6C03; }
+        header .colZone .calStart .calContent.result.heavyLV2 .calBtn {
+          border-color: #FF6C03; }
+          header .colZone .calStart .calContent.result.heavyLV2 .calBtn .btnText, header .colZone .calStart .calContent.result.heavyLV2 .calBtn .bmiLabel {
+            color: #FF6C03; }
+          header .colZone .calStart .calContent.result.heavyLV2 .calBtn .recalIcon {
+            background-color: #FF6C03; }
+        header .colZone .calStart .calContent.result.heavyLV2 .levelLabel {
+          color: #FF6C03; }
+        header .colZone .calStart .calContent.result.heavyLV3 .calBtn {
+          border-color: #FF1200; }
+          header .colZone .calStart .calContent.result.heavyLV3 .calBtn .btnText, header .colZone .calStart .calContent.result.heavyLV3 .calBtn .bmiLabel {
+            color: #FF1200; }
+          header .colZone .calStart .calContent.result.heavyLV3 .calBtn .recalIcon {
+            background-color: #FF1200; }
+        header .colZone .calStart .calContent.result.heavyLV3 .levelLabel {
+          color: #FF1200; }
+    @media (min-width: 576px) {
+      header .colZone .logo {
+        width: 100%; }
+      header .colZone .calData {
+        width: 40%;
+        padding: 10px 5%; }
+      header .colZone .calStart {
+        width: 50%;
+        padding: 10px 0; } }
+    @media (min-width: 769px) {
+      header .colZone .logo {
+        width: 30%; }
+      header .colZone .calData {
+        width: 32%;
+        padding: 0 2%; }
+      header .colZone .calStart {
+        width: 34%; }
+        header .colZone .calStart .calContent {
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
+
+section {
+  padding-bottom: 100px;
+  width: 100%; }
+  section .resultTitle {
+    font-size: 24px;
+    color: #424242;
+    padding: 28px 0;
+    text-align: center; }
+  section .resultList {
+    width: 95%;
+    margin: 0 auto; }
+    section .resultList .resultItem {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: start;
+          justify-content: start;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      position: relative;
+      margin: 8px 0;
+      background-color: #fff; }
+      section .resultList .resultItem .status {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 7px;
+        background-color: #000;
+        box-shadow: 2px 0 3px 0 #000; }
+        section .resultList .resultItem .status.light {
+          background-color: #31BAF9;
+          box-shadow: 2px 0 3px 0 #31BAF9; }
+        section .resultList .resultItem .status.normal {
+          background-color: #86D73F;
+          box-shadow: 2px 0 3px 0 #86D73F; }
+        section .resultList .resultItem .status.heavyLV0 {
+          background-color: #FF982D;
+          box-shadow: 2px 0 3px 0 #FF982D; }
+        section .resultList .resultItem .status.heavyLV1 {
+          background-color: #FF6C03;
+          box-shadow: 2px 0 3px 0 #FF6C03; }
+        section .resultList .resultItem .status.heavyLV2 {
+          background-color: #FF6C03;
+          box-shadow: 2px 0 3px 0 #FF6C03; }
+        section .resultList .resultItem .status.heavyLV3 {
+          background-color: #FF1200;
+          box-shadow: 2px 0 3px 0 #FF1200; }
+      section .resultList .resultItem .levelLabel {
+        padding: 5px 0 5px 20px;
+        width: 100%;
+        font-size: 20px;
+        color: #424242; }
+      section .resultList .resultItem .bmiScore, section .resultList .resultItem .recordWeight, section .resultList .resultItem .recordHeight, section .resultList .resultItem .recordDate {
+        width: 40%;
+        padding: 5px 0 5px 20px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+            align-items: center; }
+      section .resultList .resultItem .label {
+        padding-right: 7px;
+        font-size: 12px;
+        color: #424242; }
+      section .resultList .resultItem .number {
+        font-size: 20px;
+        color: #424242; }
+  @media (min-width: 576px) {
+    section .resultList {
+      width: 85%; }
+      section .resultList .resultItem {
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+        section .resultList .resultItem .levelLabel {
+          width: 14%;
+          padding: 21px 0 21px 20px; }
+        section .resultList .resultItem .bmiScore, section .resultList .resultItem .recordWeight, section .resultList .resultItem .recordHeight, section .resultList .resultItem .recordDate {
+          width: auto;
+          padding: 0; }
+        section .resultList .resultItem .recordDate .label {
+          padding-right: 11px; } }
+  @media (min-width: 769px) {
+    section .resultList {
+      width: 60%; }
+      section .resultList .resultItem {
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+        section .resultList .resultItem .levelLabel {
+          width: 14%;
+          padding: 21px 0 21px 20px; }
+        section .resultList .resultItem .bmiScore, section .resultList .resultItem .recordWeight, section .resultList .resultItem .recordHeight, section .resultList .resultItem .recordDate {
+          width: auto;
+          padding: 0; }
+        section .resultList .resultItem .recordDate .label {
+          padding-right: 11px; } }
+
+footer {
+  position: relative;
+  width: 100%;
+  background-color: #ffd366;
+  padding: 18px 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  footer .footerLogo {
+    display: inline-block;
+    margin: 0 auto; }
+
+@media (min-width: 768px) {
+  footer {
+    position: absolute;
+    bottom: 0; } }
+
+/*# sourceMappingURL=all.css.map */

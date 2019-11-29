@@ -1,0 +1,410 @@
+
+html, body{
+    // 使body高度為100%做為限制
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.wrap{
+    // 並設定內容最小高度為瀏覽器總高100%，relative
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: #f5f5f5;
+}
+header{
+    background-color: $secondary-color;
+    padding: 74px 0;
+    width: 100%;
+    .colZone{
+        display: flex;
+        flex-wrap: wrap;
+        width: 95%;
+        margin: 0 auto;
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            img{
+                height: auto;
+                max-height: 117px;
+            }
+        }
+        .calData{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 0;
+            label{
+                color: $primary-color;
+                font-size: 18px;
+            }
+            input{
+                border: 2px solid $primary-color;
+                border-radius: 10px;
+                margin-top: 7px;
+                font-size: 24px;
+                color: #fff;
+                padding: 4px 0 4px 16px; 
+                background-color: rgba(255,255,255,0.18);
+                &::placeholder{
+                    font-size: 24px;
+                    color: rgba(255,255,255,0.50);
+                }
+            }
+        }
+        .calStart{
+            width: 100%;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            .calContent{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .calBtn{
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 120px;
+                    height: 120px;
+                    background-color: $primary-color;
+                    border-radius: 50%;
+                    border: 6px solid transparent;
+                    cursor: pointer;
+                    &:hover{
+                        box-shadow: 0 1px 6px 3px rgba(255,196,50,0.64);
+                    }
+                    &:active{
+                        background: #DEA821;
+                    }
+                    .btnText{
+                        font-size: 24px;
+                        color: $secondary-color;
+                    }
+                    .bmiLabel{
+                        position: absolute;
+                        top: 80px;
+                        left: 45px;
+                        color: #000;
+                        display: none;
+                    }
+                    .recalIcon{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        right: -3px;
+                        bottom: 0;
+                        background-color: #000;
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        border: 3px solid $secondary-color;
+                        display: none;
+                        img{
+                            height: auto;
+                            max-height: 19px;
+                            width: auto;
+                            max-width: 14px;
+                        }
+                    }
+                }
+                .levelLabel{
+                    font-size: 32px;
+                    color: #000;
+                    padding-left: 18px;
+                    display: none;
+                }
+                // 產生結果透過添加class="result"設定樣式
+                &.result{
+                    .calBtn{
+                        background-color: transparent;
+                        border-color: #000;
+                        .btnText{
+                            font-weight: bold;
+                            font-size: 32px;
+                        }
+                        .bmiLabel{
+                            display: block;
+                        }
+                        .recalIcon{
+                            display: flex;
+                        }
+                        &:hover{
+                            box-shadow: none;
+                        }
+                        &:active{
+                            background-color: transparent;
+                        }
+                    }
+                    .levelLabel{
+                        display: block;
+                    }
+                    // 結果為過輕時套用light
+                    &.light{
+                        .calBtn{
+                            border-color: $result-light-color;
+                            .btnText, .bmiLabel{
+                                color: $result-light-color;
+                            }
+                            .recalIcon{
+                                background-color: $result-light-color;
+                            }
+                        }
+                        .levelLabel{
+                            color: $result-light-color;
+                        }                 
+                    }
+                    // 結果為理想時套用normal
+                    &.normal{
+                        .calBtn{
+                            border-color: $result-normal-color;
+                            .btnText, .bmiLabel{
+                                color: $result-normal-color;
+                            }
+                            .recalIcon{
+                                background-color: $result-normal-color;
+                            }
+                        }
+                        .levelLabel{
+                            color: $result-normal-color;
+                        }    
+                    }
+                    // 結果為過重時套用heavyLV0
+                    &.heavyLV0{
+                        .calBtn{
+                            border-color: $result-heavyLV0-color;
+                            .btnText, .bmiLabel{
+                                color: $result-heavyLV0-color;
+                            }
+                            .recalIcon{
+                                background-color: $result-heavyLV0-color;
+                            }
+                        }
+                        .levelLabel{
+                            color: $result-heavyLV0-color;
+                        }  
+                    }
+                    // 結果為輕度肥胖時套用heavyLV1
+                    &.heavyLV1{
+                        .calBtn{
+                            border-color: $result-heavyLV1-color;
+                            .btnText, .bmiLabel{
+                                color: $result-heavyLV1-color;
+                            }
+                            .recalIcon{
+                                background-color: $result-heavyLV1-color;
+                            }
+                        }
+                        .levelLabel{
+                            color: $result-heavyLV1-color;
+                        }  
+                    }
+                    // 結果為中度肥胖時套用heavyLV2
+                    &.heavyLV2{
+                        .calBtn{
+                            border-color: $result-heavyLV2-color;
+                            .btnText, .bmiLabel{
+                                color: $result-heavyLV2-color;
+                            }
+                            .recalIcon{
+                                background-color: $result-heavyLV2-color;
+                            }
+                        }
+                        .levelLabel{
+                            color: $result-heavyLV2-color;
+                        }  
+                    }
+                    // 結果為重度肥胖時套用heavyLV3
+                    &.heavyLV3{
+                        .calBtn{
+                            border-color: $result-heavyLV3-color;
+                            .btnText, .bmiLabel{
+                                color: $result-heavyLV3-color;
+                            }
+                            .recalIcon{
+                                background-color: $result-heavyLV3-color;
+                            }
+                        }
+                        .levelLabel{
+                            color: $result-heavyLV3-color;
+                        }  
+                    }
+                }
+            }
+
+        }
+        @media(min-width: 576px){
+            .logo{
+                width: 100%;
+            }
+            .calData{
+                width: 40%;
+                padding:10px 5%;
+            }
+            .calStart{
+                width: 50%;
+                padding:10px 0;
+            }
+        }
+        @media(min-width: 769px){
+            .logo{
+                width: 30%;
+            }
+            .calData{
+                width: 32%;
+                padding: 0 2%;
+            }
+            .calStart{
+                width: 34%;
+                .calContent{
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}
+
+section{
+    padding-bottom: 100px;
+    width: 100%;
+    .resultTitle{
+        font-size: 24px;
+        color: $secondary-color;
+        padding: 28px 0;
+        text-align: center;
+    }
+    .resultList{
+        width: 95%;
+        margin: 0 auto;
+        .resultItem{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-wrap: wrap;
+            position: relative;
+            // height: 62px;
+            margin: 8px 0;
+            background-color: #fff;
+            .status{
+                position: absolute;
+                left: 0;
+                height: 100%;
+                width: 7px;
+                background-color: #000;
+                box-shadow: 2px 0 3px 0 #000;
+                &.light{
+                    background-color: $result-light-color;
+                    box-shadow: 2px 0 3px 0 $result-light-color;
+                }
+                &.normal{
+                    background-color: $result-normal-color;
+                    box-shadow: 2px 0 3px 0 $result-normal-color;
+                }
+                &.heavyLV0{
+                    background-color: $result-heavyLV0-color;
+                    box-shadow: 2px 0 3px 0 $result-heavyLV0-color;
+                }
+                &.heavyLV1{
+                    background-color: $result-heavyLV1-color;
+                    box-shadow: 2px 0 3px 0 $result-heavyLV1-color;
+                }
+                &.heavyLV2{
+                    background-color: $result-heavyLV2-color;
+                    box-shadow: 2px 0 3px 0 $result-heavyLV2-color;
+                }
+                &.heavyLV3{
+                    background-color: $result-heavyLV3-color;
+                    box-shadow: 2px 0 3px 0 $result-heavyLV3-color;
+                }
+            }
+            .levelLabel{
+                padding: 5px 0 5px 20px;
+                width: 100%;
+                font-size: 20px;
+                color: $secondary-color;
+            }
+            .bmiScore, .recordWeight, .recordHeight, .recordDate{
+                width: 40%;
+                padding: 5px 0 5px 20px;
+                display: flex;
+                align-items: center;
+            }
+            .label{
+                padding-right: 7px;
+                font-size: 12px;
+                color: $secondary-color;
+            }
+            .number{
+                font-size: 20px;
+                color: $secondary-color;
+            }
+        }
+    }
+    @media (min-width: 576px){
+        .resultList{
+            width: 85%;
+            .resultItem{
+                justify-content: space-between;
+                .levelLabel{
+                    width: 14%;
+                    padding: 21px 0 21px 20px;
+                }
+                .bmiScore, .recordWeight, .recordHeight, .recordDate{
+                    width: auto;
+                    padding: 0;
+                }
+                .recordDate{
+                    .label{
+                        padding-right: 11px;
+                    }
+                }
+            }
+        }
+    }
+    @media (min-width: 769px){
+        .resultList{
+            width: 60%;
+            .resultItem{
+                justify-content: space-between;
+                .levelLabel{
+                    width: 14%;
+                    padding: 21px 0 21px 20px;
+                }
+                .bmiScore, .recordWeight, .recordHeight, .recordDate{
+                    width: auto;
+                    padding: 0;
+                }
+                .recordDate{
+                    .label{
+                        padding-right: 11px;
+                    }
+                }
+            } 
+        }
+    }
+}
+
+footer{
+    // 設定footer為absolute，位置為父元素底端，寬度100%(因絕對定位元素寬度不會撐開)
+    position: relative;
+    width: 100%;
+    background-color: $primary-color;
+    padding: 18px 0;
+    display: flex;
+    justify-content: center;
+    .footerLogo{
+        display: inline-block;
+        margin: 0 auto;
+    }
+}
+@media(min-width:768px){
+    footer{
+        position: absolute;
+        bottom: 0;
+    }
+}
