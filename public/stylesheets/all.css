@@ -265,6 +265,26 @@ section {
     color: #424242;
     padding: 28px 0;
     text-align: center; }
+  section .resultButtons {
+    width: 95%;
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+        justify-content: flex-end; }
+    section .resultButtons .deletAllResult {
+      padding: 5px;
+      cursor: pointer;
+      background-color: #ffd366;
+      border: 1px solid #fff;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 16px; }
+      section .resultButtons .deletAllResult:hover {
+        background-color: #fff;
+        border-color: #ffd366;
+        color: #ffd366;
+        font-weight: bold; }
   section .resultList {
     width: 95%;
     margin: 0 auto; }
@@ -325,6 +345,8 @@ section {
         font-size: 20px;
         color: #424242; }
   @media (min-width: 576px) {
+    section .resultButtons {
+      width: 85%; }
     section .resultList {
       width: 85%; }
       section .resultList .resultItem {
@@ -339,6 +361,8 @@ section {
         section .resultList .resultItem .recordDate .label {
           padding-right: 11px; } }
   @media (min-width: 769px) {
+    section .resultButtons {
+      width: 60%; }
     section .resultList {
       width: 60%; }
       section .resultList .resultItem {
