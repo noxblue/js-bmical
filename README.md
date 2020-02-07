@@ -1,2 +1,3 @@
-# Charles 六角學院 JavaScript最終作業-2-BMI計算機
-## 連結網址： [https://noxblue.github.io/js-bmical/](https://noxblue.github.io/js-bmical/)
+# Charles-BMI計算機
+## 使用技術JavaScript(ES6)、Scss(RWD&Flex)、Bootstrap4
+### 連結網址： [https://noxblue.github.io/js-bmical/](https://noxblue.github.io/js-bmical/)

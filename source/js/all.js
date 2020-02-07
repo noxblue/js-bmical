@@ -125,7 +125,7 @@ function calBmi(e) {
 function updateCalStart(level, bmi, levelLabel) {
     let str =
         `<div class="calContent result ${level}">
-    <div class="calBtn">
+    <div class="calBtn reBtn">
     <div class="btnText">${bmi}</div>
     <div class="bmiLabel">BMI</div>
     <div class="recalIcon"><img src="images/icons_loop.png"></div>
@@ -133,11 +133,29 @@ function updateCalStart(level, bmi, levelLabel) {
     <div class="levelLabel">${levelLabel}</div>
     </div>`
     calStart.innerHTML = str;
-    // 按鈕區域更新後，原綁定失效，重新綁定按鈕，並重新綁定監聽事件
+    // 綁定點擊後回覆樣式行為在reBtn上
+    reBtn = document.querySelector('.reBtn');
+    reBtn.addEventListener('click', reCalStyle, false);
+}
+// 按下reBtn回到計算前樣式，並重新綁定計算監聽事件
+function reCalStyle(){
+    let str = 
+    `<div class="calContent">
+    <div class="calBtn">
+        <div class="btnText">看結果</div>
+        <div class="bmiLabel">BMI</div>
+        <div class="recalIcon"><img src="images/icons_loop.png"></div>
+    </div>
+    <div class="levelLabel">過度肥胖</div>
+    </div>
+    `
+    calStart.innerHTML = str;
+    //因按鈕區域更新後，原綁定失效，重新綁定按鈕，並重新綁定監聽事件
     calBtn = document.querySelector('.calBtn');
     calBtn.addEventListener('click', calBmi, false);
     clearInput();
 }
+
 // 更新input區域，清空輸入內容
 function clearInput() {
     heightInput.value = ''

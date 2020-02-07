@@ -56,7 +56,7 @@ html, body {
   background-color: #f5f5f5; }
 
 header {
-  background-color: #424242;
+  background-color: #282828;
   padding: 74px 0;
   width: 100%; }
   header .colZone {
@@ -87,10 +87,10 @@ header {
       width: 100%;
       padding: 10px 0; }
       header .colZone .calData label {
-        color: #ffd366;
+        color: #99ccff;
         font-size: 18px; }
       header .colZone .calData input {
-        border: 2px solid #ffd366;
+        border: 2px solid #99ccff;
         border-radius: 10px;
         margin-top: 7px;
         font-size: 24px;
@@ -128,17 +128,19 @@ header {
               align-items: center;
           width: 120px;
           height: 120px;
-          background-color: #ffd366;
+          background-color: #99ccff;
           border-radius: 50%;
           border: 6px solid transparent;
           cursor: pointer; }
           header .colZone .calStart .calContent .calBtn:hover {
-            box-shadow: 0 1px 6px 3px rgba(255, 196, 50, 0.64); }
+            box-shadow: 0 1px 6px 3px rgba(230, 243, 255, 0.64); }
           header .colZone .calStart .calContent .calBtn:active {
-            background: #DEA821; }
+            background: #0066cc; }
+            header .colZone .calStart .calContent .calBtn:active .btnText {
+              color: #fff; }
           header .colZone .calStart .calContent .calBtn .btnText {
             font-size: 24px;
-            color: #424242; }
+            color: #282828; }
           header .colZone .calStart .calContent .calBtn .bmiLabel {
             position: absolute;
             top: 80px;
@@ -159,7 +161,7 @@ header {
             border-radius: 50%;
             width: 30px;
             height: 30px;
-            border: 3px solid #424242;
+            border: 3px solid #282828;
             display: none; }
             header .colZone .calStart .calContent .calBtn .recalIcon img {
               height: auto;
@@ -262,7 +264,8 @@ section {
   width: 100%; }
   section .resultTitle {
     font-size: 24px;
-    color: #424242;
+    font-weight: bold;
+    color: #282828;
     padding: 28px 0;
     text-align: center; }
   section .resultButtons {
@@ -275,16 +278,15 @@ section {
     section .resultButtons .deletAllResult {
       padding: 5px;
       cursor: pointer;
-      background-color: #ffd366;
+      background-color: #99ccff;
       border: 1px solid #fff;
-      border-radius: 3px;
+      border-radius: 5px;
       color: #fff;
-      font-size: 16px; }
+      font-size: 18px; }
       section .resultButtons .deletAllResult:hover {
         background-color: #fff;
-        border-color: #ffd366;
-        color: #ffd366;
-        font-weight: bold; }
+        border-color: #99ccff;
+        color: #99ccff; }
   section .resultList {
     width: 95%;
     margin: 0 auto; }
@@ -329,7 +331,7 @@ section {
         padding: 5px 0 5px 20px;
         width: 100%;
         font-size: 20px;
-        color: #424242; }
+        color: #282828; }
       section .resultList .resultItem .bmiScore, section .resultList .resultItem .recordWeight, section .resultList .resultItem .recordHeight, section .resultList .resultItem .recordDate {
         width: 40%;
         padding: 5px 0 5px 20px;
@@ -340,10 +342,10 @@ section {
       section .resultList .resultItem .label {
         padding-right: 7px;
         font-size: 12px;
-        color: #424242; }
+        color: #282828; }
       section .resultList .resultItem .number {
         font-size: 20px;
-        color: #424242; }
+        color: #282828; }
   @media (min-width: 576px) {
     section .resultButtons {
       width: 85%; }
@@ -380,7 +382,7 @@ section {
 footer {
   position: relative;
   width: 100%;
-  background-color: #ffd366;
+  background-color: #99ccff;
   padding: 18px 0;
   display: -ms-flexbox;
   display: flex;
